@@ -55,7 +55,7 @@ const Register = () => {
 }, [user, isError, isSuccess, message, navigate, dispatch])
 
 if (isLoading) {
-  return <Spinner />
+  return <Spinner/>
 }
 
   return (
