@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
+import TareaForm from "../components/TareaForm"
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -15,9 +16,13 @@ const Dashboard = () => {
   }, [user, navigate])
 
   return (
-    <div>
-      Dashboard
-    </div>
+    <>
+      <section className="heading">
+        <h3>Bienvenido {user && user.name}</h3>
+        <p>Dashboard de Tareas</p>
+      </section>
+      <TareaForm/>
+    </>
   )
 }
 
