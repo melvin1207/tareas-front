@@ -1,11 +1,17 @@
 import { useState } from "react"
-import { UseSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
+import { crearTarea } from '../features/tareas/tareaSlice'
 
 const TareaForm = () => {
   const [descripcion, setDescripcion] = useState('')
 
+  const dispatch = useDispatch()
+  
   const onSubmit = (e) => {
     e.preventDefault()
+
+    dispatch(crearTarea({descripcion}))
+    setDescripcion('')
   }
 
   return (
