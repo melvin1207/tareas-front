@@ -20,10 +20,9 @@ const Dashboard = () => {
 
     if(!user){
       navigate('/login')
+    } else{
+      dispatch(getTareas())
     }
-
-    dispatch(getTareas())
-
     return () => {
       dispatch(reset())
     }
